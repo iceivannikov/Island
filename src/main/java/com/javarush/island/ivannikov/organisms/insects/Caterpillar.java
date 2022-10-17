@@ -1,17 +1,9 @@
 package com.javarush.island.ivannikov.organisms.insects;
 
-
+import com.javarush.island.ivannikov.organisms.abstraction.Insects;
 //Гусеница
-
-import com.javarush.island.ivannikov.organisms.abstractions.Organisms;
-
-
-
-public class Caterpillar extends Organisms {
-
-
-    protected Caterpillar(String name, double maxWeight, int maxCount, int maxMove, double maxEat) {
-        super(name, maxWeight, maxCount, maxMove, maxEat);
+public class Caterpillar extends Insects {
+    public Caterpillar(String name, Double weight, Integer maxCount, Double move, Double eat) {
+        super(name, weight, maxCount, move, eat);
     }
-
 }

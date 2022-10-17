@@ -1,6 +1,6 @@
 package com.javarush.island.ivannikov;
 
-import com.javarush.island.ivannikov.organisms.abstractions.Organisms;
+import com.javarush.island.ivannikov.organisms.abstraction.Organisms;
 import com.javarush.island.ivannikov.repository.AnimalData;
 
 import java.util.List;
@@ -32,9 +32,9 @@ public class Cell {
 
     }
 
-    public void cellFill(List<Organisms> cell) {
-        cell.add((Organisms) animalData.createAnimals());
-    }
+//    public void cellFill(List<Organisms> cell) {
+//        cell.add((Organisms) animalData.createAnimals());
+//    }
 
     public void getCellData() {
         for (Organisms organisms : cell) {

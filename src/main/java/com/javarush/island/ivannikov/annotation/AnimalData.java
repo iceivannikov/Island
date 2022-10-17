@@ -1,4 +1,4 @@
-package com.javarush.island.ivannikov.organisms.annotation;
+package com.javarush.island.ivannikov.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

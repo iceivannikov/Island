@@ -1,11 +1,11 @@
 package com.javarush.island.ivannikov.organisms.plants;
 
-import com.javarush.island.ivannikov.organisms.abstractions.Organisms;
+import com.javarush.island.ivannikov.organisms.abstraction.Plants;
 
 //Трава
-public class Grass extends Organisms {
+public class Grass extends Plants {
 
-    public Grass(String name, double maxWeight, int maxCount, int maxMove, double maxEat) {
-        super(name, maxWeight, maxCount, maxMove, maxEat);
+    public Grass(String name, Double weight, Integer maxCount, Double move, Double eat) {
+        super(name, weight, maxCount, move, eat);
     }
 }
