@@ -2,10 +2,13 @@ package com.javarush.island.ivannikov.organisms.herbivores;
 
 import com.javarush.island.ivannikov.organisms.abstraction.Trobivore;
 
+import java.util.Properties;
+
 // Олень
 public class Deer extends Trobivore {
-    public Deer(String name, Double weight, Integer maxCount, Double move, Double eat) {
-        super(name, weight, maxCount, move, eat);
+
+    public Deer(Properties properties, String type) {
+        super(properties, type);
     }
 
     @Override

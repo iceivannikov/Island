@@ -3,11 +3,15 @@ package com.javarush.island.ivannikov.organisms.herbivores;
 import com.javarush.island.ivannikov.organisms.abstraction.Organisms;
 import com.javarush.island.ivannikov.organisms.abstraction.Trobivore;
 
+import java.util.Properties;
+
 
 public class Horse extends Trobivore{
 
-    public Horse(String name, Double weight, Integer maxCount, Double move, Double eat) {
-        super(name, weight, maxCount, move, eat);
+
+
+    public Horse(Properties properties, String type) {
+        super(properties, type);
     }
 
     @Override

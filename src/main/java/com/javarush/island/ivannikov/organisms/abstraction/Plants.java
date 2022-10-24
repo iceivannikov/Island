@@ -1,7 +1,10 @@
 package com.javarush.island.ivannikov.organisms.abstraction;
 
+import java.util.Properties;
+
 public abstract class Plants extends Organisms {
-    protected Plants(String name, Double weight, Integer maxCount, Double move, Double eat) {
-        super(name, weight, maxCount, move, eat);
+    public Plants(Properties properties, String type){
+        super(properties,type);
     }
+
 }

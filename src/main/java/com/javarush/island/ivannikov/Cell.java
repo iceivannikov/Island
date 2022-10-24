@@ -1,15 +1,20 @@
 package com.javarush.island.ivannikov;
 
 import com.javarush.island.ivannikov.organisms.abstraction.Organisms;
-import com.javarush.island.ivannikov.repository.AnimalData;
+import com.javarush.island.ivannikov.repository.AnimalFactory;
 
-import java.util.List;
+import java.util.*;
 
 public class Cell {
+    AnimalFactory animalFactory;
+    int row;
+    int col;
+    List<Organisms> organismsList;
 
-    AnimalData animalData;
-    private final int row;
-    private final int col;
+    public Cell(int row, int col) {
+        this.row = row;
+        this.col = col;
+    }
 
 
     public int getRow() {
@@ -20,28 +25,12 @@ public class Cell {
         return col;
     }
 
-    private List<Organisms> cell;
 
-    public List<Organisms> getCell() {
-        return cell;
+    public List<Organisms> addOrganisms() {
+        Properties properties = Settings.load();
+        organismsList = animalFactory.createOrganisms(properties);
+        return organismsList;
     }
-
-    public Cell(int row, int col) {
-        this.row = row;
-        this.col = col;
-
-    }
-
-//    public void cellFill(List<Organisms> cell) {
-//        cell.add((Organisms) animalData.createAnimals());
-//    }
-
-    public void getCellData() {
-        for (Organisms organisms : cell) {
-            System.out.println(organisms.toString());
-        }
-    }
-
 }
 
 

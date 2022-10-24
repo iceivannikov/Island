@@ -2,9 +2,11 @@ package com.javarush.island.ivannikov.organisms.herbivores;
 
 import com.javarush.island.ivannikov.organisms.abstraction.Trobivore;
 
+import java.util.Properties;
+
 public class Boar extends Trobivore {
-    public Boar(String name, Double weight, Integer maxCount, Double move, Double eat) {
-        super(name, weight, maxCount, move, eat);
+    public Boar(Properties properties, String type) {
+        super(properties, type);
     }
 
     @Override
