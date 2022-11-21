@@ -1,5 +1,5 @@
 package com.javarush.island.ivannikov.organisms.interfaces;
 
 public interface Movable {
-    Integer movable();
+    void movable();
 }

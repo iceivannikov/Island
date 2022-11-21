@@ -1,12 +1,12 @@
 package com.javarush.island.ivannikov;
 
+import com.javarush.island.ivannikov.services.GameFieldWorker;
+
 public class Runner {
     public static void main(String[] args) {
-//        Properties properties = Settings.load();
-//        AnimalFactory animalFactory = new AnimalFactory();
-//        List<Organisms> organisms = animalFactory.createOrganisms(properties);
-//        System.out.println(organisms);
-        GameField gameField = new GameField();
-        gameField.initialize();
+        GameFieldWorker gameFieldWorker = new GameFieldWorker();
+        Thread thread = new Thread(gameFieldWorker);
+        thread.start();
+
     }
 }

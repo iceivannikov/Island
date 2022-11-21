@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Properties;
 
-@Slf4j
+
 public class Wolf extends Predator {
 
     public Wolf(Properties properties, String type) {

@@ -1,35 +1,39 @@
 package com.javarush.island.ivannikov.repository;
 
+import com.javarush.island.ivannikov.Random;
 import com.javarush.island.ivannikov.organisms.abstraction.Organisms;
 import com.javarush.island.ivannikov.organisms.herbivores.*;
 import com.javarush.island.ivannikov.organisms.insects.Caterpillar;
 import com.javarush.island.ivannikov.organisms.plants.Grass;
 import com.javarush.island.ivannikov.organisms.predators.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class AnimalFactory {
-    private final ArrayList<Organisms> organismsList = new ArrayList<>();
+    public static final String MAX_SIZE = ".maxSize";
+    private final Map<OrganismType, Set<Organisms>> organismTypeSetMap = new ConcurrentHashMap<>();
 
-    public List<Organisms> createOrganisms(Properties properties) {
-        ArrayList<OrganismType> organismTypes = new ArrayList<>(Arrays.asList(OrganismType.values()));
+    public Map<OrganismType, Set<Organisms>> createOrganisms(Properties properties) {
+        Set<Organisms> organismsSet = new HashSet<>();
+        Set<OrganismType> organismTypes = new HashSet<>(Arrays.asList(OrganismType.values()));
         for (OrganismType organismType : organismTypes) {
             String type = organismType.name().toLowerCase();
-            int maxSize = Integer.parseInt(properties.getProperty(type + ".maxSize"));
-            for (int i = 0; i < maxSize; i++) {
+            String countOrganisms = properties.getProperty(type + MAX_SIZE);
+            double bound = Double.parseDouble(countOrganisms);
+            double maxCountOrganismInOneCell = Random.random(0,bound);
+            for (int i = 0; i < maxCountOrganismInOneCell; i++) {
                 Organisms organisms = createOrganism(properties, type);
-                organisms.setName(type + " - " + i);
-                organismsList.add(organisms);
+                String name = type + " " + i;
+                organisms.setName(name);
+                organismsSet.add(organisms);
+                organismTypeSetMap.put(OrganismType.valueOf(type.toUpperCase()), organismsSet);
             }
         }
-        return organismsList;
+        return organismTypeSetMap;
     }
 
     private Organisms createOrganism(Properties properties, String type) {
-
         return switch (type) {
             case "wolf" -> new Wolf(properties, type);
             case "fox" -> new Fox(properties, type);

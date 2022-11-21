@@ -2,20 +2,25 @@ package com.javarush.island.ivannikov;
 
 import com.javarush.island.ivannikov.organisms.abstraction.Organisms;
 import com.javarush.island.ivannikov.repository.AnimalFactory;
+import com.javarush.island.ivannikov.repository.OrganismType;
 
 import java.util.*;
 
 public class Cell {
-    AnimalFactory animalFactory;
+    private final Map<OrganismType, Set<Organisms>> organism;
     int row;
     int col;
-    List<Organisms> organismsList;
 
     public Cell(int row, int col) {
         this.row = row;
         this.col = col;
+        AnimalFactory animalFactory = new AnimalFactory();
+        this.organism = animalFactory.createOrganisms(Settings.load());
     }
 
+    public Map<OrganismType, Set<Organisms>> getOrganism() {
+        return organism;
+    }
 
     public int getRow() {
         return row;
@@ -25,11 +30,11 @@ public class Cell {
         return col;
     }
 
-
-    public List<Organisms> addOrganisms() {
-        Properties properties = Settings.load();
-        organismsList = animalFactory.createOrganisms(properties);
-        return organismsList;
+    @Override
+    public String toString() {
+        return "Cell[" +
+                "row=" + row +
+                ", col=" + col + "] : ";
     }
 }
 

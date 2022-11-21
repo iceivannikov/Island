@@ -10,5 +10,20 @@ public class Caterpillar extends Insects {
     public Caterpillar(Properties properties, String type) {
         super();
     }
+
+    @Override
+    public void eating() {
+
+    }
+
+    @Override
+    public void movable() {
+
+    }
+
+    @Override
+    public void multiply() {
+
+    }
 }
 

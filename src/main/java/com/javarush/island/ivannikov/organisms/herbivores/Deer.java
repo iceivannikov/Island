@@ -1,28 +1,28 @@
 package com.javarush.island.ivannikov.organisms.herbivores;
 
-import com.javarush.island.ivannikov.organisms.abstraction.Trobivore;
+import com.javarush.island.ivannikov.organisms.abstraction.Herbivores;
 
 import java.util.Properties;
 
 // Олень
-public class Deer extends Trobivore {
+public class Deer extends Herbivores {
 
     public Deer(Properties properties, String type) {
         super(properties, type);
     }
 
     @Override
-    public Integer eating() {
-        return null;
+    public void eating() {
+
     }
 
     @Override
-    public Integer movable() {
-        return null;
+    public void movable() {
+
     }
 
     @Override
-    public Boolean multiply() {
-        return null;
+    public void multiply() {
+
     }
 }

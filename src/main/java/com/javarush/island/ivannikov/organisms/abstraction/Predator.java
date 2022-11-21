@@ -4,22 +4,23 @@ import java.util.Properties;
 
 public class Predator extends Animal {
 
+
     protected Predator(Properties properties, String type) {
-        super(properties,type);
+        super(properties, type);
     }
 
     @Override
-    public Integer eating() {
-        return null;
+    public void eating() {
+        System.out.println("Животное поело");
     }
 
     @Override
-    public Integer movable() {
-        return null;
+    public void movable() {
+        System.out.println("Животное сдалало шаг");
     }
 
     @Override
-    public Boolean multiply() {
-        return null;
+    public void multiply() {
+        System.out.println("Животное размножилось");
     }
 }

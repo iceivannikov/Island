@@ -8,8 +8,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Settings {
-
     public static final String PROPERTIES_PATH = "C:\\Users\\Виктор\\IdeaProjects\\Island\\src\\main\\resources\\application.properties";
+
+    private Settings() {
+    }
 
     public static Properties load() {
         try {

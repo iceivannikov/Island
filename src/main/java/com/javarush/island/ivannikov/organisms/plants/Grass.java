@@ -10,4 +10,19 @@ public class Grass extends Plants {
     public Grass(Properties properties, String type) {
         super(properties, type);
     }
+
+    @Override
+    public void eating() {
+
+    }
+
+    @Override
+    public void movable() {
+
+    }
+
+    @Override
+    public void multiply() {
+
+    }
 }

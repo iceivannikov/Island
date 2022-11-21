@@ -1,10 +1,10 @@
 package com.javarush.island.ivannikov.organisms.herbivores;
 
-import com.javarush.island.ivannikov.organisms.abstraction.Trobivore;
+import com.javarush.island.ivannikov.organisms.abstraction.Herbivores;
 
 import java.util.Properties;
 
-public class Goat extends Trobivore {
+public class Goat extends Herbivores {
 
 
     public Goat(Properties properties, String type) {
@@ -12,17 +12,17 @@ public class Goat extends Trobivore {
     }
 
     @Override
-    public Integer eating() {
-        return 0;
+    public void eating() {
+
     }
 
     @Override
-    public Integer movable() {
-        return 0;
+    public void movable() {
+
     }
 
     @Override
-    public Boolean multiply() {
-        return true;
+    public void multiply() {
+
     }
 }
